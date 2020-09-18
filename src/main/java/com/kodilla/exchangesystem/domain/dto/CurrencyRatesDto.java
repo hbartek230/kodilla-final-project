@@ -9,9 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class UserDto {
-    private Long userId;
-    private String login;
-    private String password;
-
+public class CurrencyRatesDto {
+    private double ratesBid;
+    private double ratesAsk;
 }
