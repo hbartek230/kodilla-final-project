@@ -1,7 +1,7 @@
 package com.kodilla.exchangesystem.repository;
 
-import com.kodilla.exchangesystem.domain.dto.CurrencyDto;
+import com.kodilla.exchangesystem.domain.Currency;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CurrencyRepository extends JpaRepository<CurrencyDto, Long> {
+public interface CurrencyRepository extends JpaRepository<Currency, Long> {
 }

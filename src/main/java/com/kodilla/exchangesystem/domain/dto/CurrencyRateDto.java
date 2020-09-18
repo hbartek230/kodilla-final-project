@@ -9,7 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class CurrencyRatesDto {
+public class CurrencyRateDto {
     private double ratesBid;
     private double ratesAsk;
 }
