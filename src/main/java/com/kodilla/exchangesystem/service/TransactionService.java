@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class TransactionService {
 
-    private TransactionRepository repository;
+    private final TransactionRepository repository;
 
     @Autowired
     public TransactionService(TransactionRepository repository) {
@@ -27,5 +27,21 @@ public class TransactionService {
 
     public Transaction getTransactionByCurrency(Long currencyId) {
         return repository.findByCurrencyId(currencyId);
+    }
+
+    public Transaction getUserTransactionByCurrency(Long userId, Long currencyId) {
+        return repository.findByUserIdAndCurrencyId(userId, currencyId);
+    }
+
+    public Transaction getSingleUserTransaction(Long userId, Long transactionId) {
+        return repository.findByUserIdAndTransactionId(userId, transactionId);
+    }
+
+    public void addTransaction(Transaction transaction) {
+        repository.save(transaction);
+    }
+
+    public void deleteTransaction(Long transactionId) {
+        repository.deleteById(transactionId);
     }
 }

@@ -8,4 +8,8 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     Transaction findByUserId(Long userId);
 
     Transaction findByCurrencyId(Long currencyId);
+
+    Transaction findByUserIdAndCurrencyId(Long userId, Long currencyId);
+
+    Transaction findByUserIdAndTransactionId(Long userId, Long transactionId);
 }

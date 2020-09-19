@@ -19,22 +19,22 @@ public class CryptoCurrencyController {
     }
 
     @GetMapping
-    public CryptoCurrencyDto getCurrency(@RequestParam Long cryptoCurrencyId) {
+    public CryptoCurrencyDto getCryptoCurrency(@RequestParam Long cryptoCurrencyId) {
         return new CryptoCurrencyDto();
     }
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
-    public CryptoCurrencyDto addCurrency(@RequestBody CryptoCurrencyDto cryptoCurrencyDto) {
+    public CryptoCurrencyDto addCryptoCurrency(@RequestBody CryptoCurrencyDto cryptoCurrencyDto) {
         return new CryptoCurrencyDto();
     }
 
     @PutMapping
-    public CryptoCurrencyDto updateCurrency(@RequestBody CryptoCurrencyDto cryptoCurrencyDto) {
+    public CryptoCurrencyDto updateCryptoCurrency(@RequestBody CryptoCurrencyDto cryptoCurrencyDto) {
         return new CryptoCurrencyDto();
     }
 
     @DeleteMapping
-    public void deleteCurrency(@RequestParam Long cryptoCurrencyId) {
+    public void deleteCryptoCurrency(@RequestParam Long cryptoCurrencyId) {
 
     }
 }
