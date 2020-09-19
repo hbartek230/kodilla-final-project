@@ -18,7 +18,7 @@ public class CryptoCurrencyController {
         return new ArrayList<>();
     }
 
-    @GetMapping
+    @GetMapping(params = "cryptoCurrencyId")
     public CryptoCurrencyDto getCryptoCurrency(@RequestParam Long cryptoCurrencyId) {
         return new CryptoCurrencyDto();
     }
