@@ -1,9 +1,15 @@
 package com.kodilla.exchangesystem.domain;
 
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 @Entity
 public class CurrencyRate {
 

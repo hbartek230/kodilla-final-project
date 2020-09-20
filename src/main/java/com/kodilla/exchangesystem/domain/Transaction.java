@@ -1,11 +1,16 @@
 package com.kodilla.exchangesystem.domain;
 
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 @Entity
 public class Transaction {
 
@@ -28,7 +33,6 @@ public class Transaction {
 
     @Column
     private int currencyBoughtValue;
-
 
     @ManyToOne
     @JoinColumn(name = "userId")
