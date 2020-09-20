@@ -18,22 +18,22 @@ public class TransactionController {
         return new ArrayList<>();
     }
 
-    @GetMapping
+    @GetMapping(params = "userId")
     public TransactionDto getUserTransactions(@RequestParam Long userId) {
         return new TransactionDto();
     }
 
-    @GetMapping
+    @GetMapping(params = "currencyId")
     public TransactionDto getCurrencyTransactions(@RequestParam Long currencyId) {
         return new TransactionDto();
     }
 
-    @GetMapping
+    @GetMapping(params = {"userId, currencyId"})
     public TransactionDto getUserTransactionsByCurrency(@RequestParam Long userId, @RequestParam Long currencyId) {
         return new TransactionDto();
     }
 
-    @GetMapping
+    @GetMapping(params = {"userId, transactionId"})
     public TransactionDto getSingleUserTransaction(@RequestParam Long userId, @RequestParam Long transactionId) {
         return new TransactionDto();
     }
