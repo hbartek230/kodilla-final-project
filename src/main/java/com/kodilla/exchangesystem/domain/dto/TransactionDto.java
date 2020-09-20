@@ -14,8 +14,8 @@ import java.time.LocalDate;
 public class TransactionDto {
     private Long transactionId;
     private LocalDate transactionDate;
-    private CurrencyDto currencySold;
-    private CurrencyDto currencyBought;
+    private Long currencySoldId;
+    private Long currencyBoughtId;
     private int currencySoldValue;
     private int currencyBoughtValue;
     private UserDto user;

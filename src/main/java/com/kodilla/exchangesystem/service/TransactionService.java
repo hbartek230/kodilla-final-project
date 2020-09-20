@@ -25,16 +25,24 @@ public class TransactionService {
         return repository.findByUserId(userId);
     }
 
-    public Transaction getTransactionByCurrency(Long currencyId) {
-        return repository.findByCurrencyId(currencyId);
+    public Transaction getTransactionByCurrencySold(Long currencySoldId) {
+        return repository.findByCurrencySoldId(currencySoldId);
     }
 
-    public Transaction getUserTransactionByCurrency(Long userId, Long currencyId) {
-        return repository.findByUserIdAndCurrencyId(userId, currencyId);
+    public Transaction getUserTransactionByCurrencySold(Long userId, Long currencySoldId) {
+        return repository.findByUserIdAndCurrencySoldId(userId, currencySoldId);
     }
 
-    public Transaction getSingleUserTransaction(Long userId, Long transactionId) {
-        return repository.findByUserIdAndTransactionId(userId, transactionId);
+    public Transaction getTransactionByCurrencyBought(Long currencyBoughtId) {
+        return repository.findByCurrencyBoughtId(currencyBoughtId);
+    }
+
+    public Transaction getUserTransactionByCurrencyBought(Long userId, Long currencyBoughtId) {
+        return repository.findByUserIdAndCurrencyBoughtId(userId, currencyBoughtId);
+    }
+
+    public Transaction getSingleUserTransaction(Long transactionId, Long userId) {
+        return repository.findByIdAndUserId(transactionId, userId);
     }
 
     public void addTransaction(Transaction transaction) {
