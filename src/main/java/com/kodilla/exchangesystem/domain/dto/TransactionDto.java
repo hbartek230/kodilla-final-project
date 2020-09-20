@@ -18,5 +18,5 @@ public class TransactionDto {
     private Long currencyBoughtId;
     private int currencySoldValue;
     private int currencyBoughtValue;
-    private UserDto user;
+    private Long userId;
 }

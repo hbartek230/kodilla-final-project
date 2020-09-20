@@ -1,16 +1,12 @@
 package com.kodilla.exchangesystem.domain;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Entity
 public class Currency {
@@ -25,6 +21,12 @@ public class Currency {
     @Column
     private String currencyCode;
 
-    @ManyToMany
-    private List<Transaction> transactions;
+    @OneToOne
+    private CurrencyRate currencyRate;
+
+    public Currency(String currencyName, String currencyCode, CurrencyRate currencyRate) {
+        this.currencyName = currencyName;
+        this.currencyCode = currencyCode;
+        this.currencyRate = currencyRate;
+    }
 }
