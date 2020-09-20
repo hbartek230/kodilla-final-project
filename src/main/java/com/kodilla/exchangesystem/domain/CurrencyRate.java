@@ -1,14 +1,12 @@
 package com.kodilla.exchangesystem.domain;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Entity
 public class CurrencyRate {
@@ -27,4 +25,9 @@ public class CurrencyRate {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "currencyId")
     private Currency currency;
+
+    public CurrencyRate(double ratesBid, double ratesAsk) {
+        this.ratesBid = ratesBid;
+        this.ratesAsk = ratesAsk;
+    }
 }
