@@ -18,7 +18,7 @@ public class UserController {
         return new ArrayList<>();
     }
 
-    @GetMapping
+    @GetMapping(params = "userId")
     public UserDto getUser(@RequestParam Long userId) {
         return new UserDto();
     }

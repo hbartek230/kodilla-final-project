@@ -18,12 +18,12 @@ public class CurrencyController {
         return new ArrayList<>();
     }
 
-    @GetMapping
+    @GetMapping(params = "currencyId")
     public CurrencyDto getCurrency(@RequestParam Long currencyId) {
         return new CurrencyDto();
     }
 
-    @GetMapping
+    @GetMapping(params = "currencyCode")
     public CurrencyDto getCurrencyByCode(@RequestParam String currencyCode) {
         return new CurrencyDto();
     }

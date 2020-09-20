@@ -15,5 +15,5 @@ public class CurrencyDto {
     private Long currencyId;
     private String currencyName;
     private String currencyCode;
-    private List<CurrencyRatesDto> currencyRates;
+    private List<CurrencyRateDto> currencyRates;
 }
