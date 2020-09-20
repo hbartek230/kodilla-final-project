@@ -23,18 +23,31 @@ public class TransactionController {
         return new TransactionDto();
     }
 
-    @GetMapping(params = "currencyId")
-    public TransactionDto getCurrencyTransactions(@RequestParam Long currencyId) {
+    @GetMapping(params = "currencySoldId")
+    public TransactionDto getCurrencySoldTransactions(@RequestParam Long currencySoldId) {
         return new TransactionDto();
     }
 
-    @GetMapping(params = {"userId, currencyId"})
-    public TransactionDto getUserTransactionsByCurrency(@RequestParam Long userId, @RequestParam Long currencyId) {
+    @GetMapping(params = {"userId, currencySoldId"})
+    public TransactionDto getUserTransactionsByCurrencySold(@RequestParam Long userId,
+                                                            @RequestParam Long currencySoldId) {
+        return new TransactionDto();
+    }
+
+    @GetMapping(params = "currencyBoughtId")
+    public TransactionDto getCurrencyBoughtTransactions(@RequestParam Long currencyBoughtId) {
+        return new TransactionDto();
+    }
+
+    @GetMapping(params = {"userId, currencyBoughtId"})
+    public TransactionDto getUserTransactionsByCurrencyBought(@RequestParam Long userId,
+                                                              @RequestParam Long currencyBoughtId) {
         return new TransactionDto();
     }
 
     @GetMapping(params = {"userId, transactionId"})
-    public TransactionDto getSingleUserTransaction(@RequestParam Long userId, @RequestParam Long transactionId) {
+    public TransactionDto getSingleUserTransaction(@RequestParam Long userId,
+                                                   @RequestParam Long transactionId) {
         return new TransactionDto();
     }
 
