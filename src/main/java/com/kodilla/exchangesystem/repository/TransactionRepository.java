@@ -7,9 +7,13 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
 
     Transaction findByUserId(Long userId);
 
-    Transaction findByCurrencyId(Long currencyId);
+    Transaction findByCurrencySoldId(Long currencySoldId);
 
-    Transaction findByUserIdAndCurrencyId(Long userId, Long currencyId);
+    Transaction findByUserIdAndCurrencySoldId(Long userId, Long currencySoldId);
 
-    Transaction findByUserIdAndTransactionId(Long userId, Long transactionId);
+    Transaction findByCurrencyBoughtId(Long currencyBoughtId);
+
+    Transaction findByUserIdAndCurrencyBoughtId(Long userId, Long currencyBoughtId);
+
+    Transaction findByIdAndUserId(Long transactionId, Long userId);
 }

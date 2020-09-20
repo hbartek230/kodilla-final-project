@@ -5,8 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -15,5 +13,5 @@ public class CurrencyDto {
     private Long currencyId;
     private String currencyName;
     private String currencyCode;
-    private List<CurrencyRateDto> currencyRates;
+    private CurrencyRateDto currencyRates;
 }
