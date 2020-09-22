@@ -5,13 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class UserDto {
-    private Long userId;
+    private Long id;
     private String login;
     private String password;
-
+    private List<Long> transactionsId;
 }

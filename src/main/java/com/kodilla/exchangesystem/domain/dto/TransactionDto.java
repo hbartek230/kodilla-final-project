@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class TransactionDto {
-    private Long transactionId;
+    private Long id;
     private LocalDate transactionDate;
     private Long currencySoldId;
     private Long currencyBoughtId;
