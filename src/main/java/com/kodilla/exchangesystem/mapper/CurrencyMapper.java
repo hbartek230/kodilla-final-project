@@ -7,6 +7,9 @@ import com.kodilla.exchangesystem.repository.CurrencyRateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class CurrencyMapper {
 
@@ -34,5 +37,17 @@ public class CurrencyMapper {
                 currencyRateRepository.findById(currencyDto.getCurrencyRateId())
                         .orElseThrow(CurrencyRateNotFoundException::new)
         );
+    }
+
+    public List<CurrencyDto> mapToCurrencyDtoList(List<Currency> currenciesList) {
+        return currenciesList.stream()
+                .map(currency ->
+                        new CurrencyDto(
+                                currency.getId(),
+                                currency.getCurrencyName(),
+                                currency.getCurrencyCode(),
+                                currency.getCurrencyRate().getId()
+                        ))
+                .collect(Collectors.toList());
     }
 }

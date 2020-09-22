@@ -7,6 +7,7 @@ import com.kodilla.exchangesystem.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -42,5 +43,19 @@ public class UserMapper {
                         .map(Transaction::getId)
                         .collect(Collectors.toList())
         );
+    }
+
+    public List<UserDto> mapToUserDtoList(List<User> users) {
+        return users.stream()
+                .map(user ->
+                        new UserDto(
+                                user.getId(),
+                                user.getLogin(),
+                                user.getPassword(),
+                                user.getTransactions().stream()
+                                        .map(Transaction::getId)
+                                        .collect(Collectors.toList())
+                        ))
+                .collect(Collectors.toList());
     }
 }
