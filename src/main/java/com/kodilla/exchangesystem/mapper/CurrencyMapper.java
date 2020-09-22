@@ -28,6 +28,7 @@ public class CurrencyMapper {
 
     public Currency mapToCurrency(CurrencyDto currencyDto) throws CurrencyRateNotFoundException {
         return new Currency(
+                currencyDto.getId(),
                 currencyDto.getCurrencyName(),
                 currencyDto.getCurrencyCode(),
                 currencyRateRepository.findById(currencyDto.getCurrencyRateId())

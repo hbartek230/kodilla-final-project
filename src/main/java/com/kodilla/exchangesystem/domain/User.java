@@ -1,13 +1,14 @@
 package com.kodilla.exchangesystem.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Entity
 public class User {
@@ -29,10 +30,4 @@ public class User {
             fetch = FetchType.LAZY
     )
     private List<Transaction> transactions;
-
-    public User(String login, String password) {
-        this.login = login;
-        this.password = password;
-        this.transactions = new ArrayList<>();
-    }
 }

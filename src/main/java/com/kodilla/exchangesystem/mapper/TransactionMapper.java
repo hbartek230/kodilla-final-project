@@ -31,6 +31,7 @@ public class TransactionMapper {
 
     public Transaction mapToTransaction(TransactionDto transactionDto) throws UserNotFoundException {
         return new Transaction(
+                transactionDto.getId(),
                 transactionDto.getTransactionDate(),
                 transactionDto.getCurrencySoldId(),
                 transactionDto.getCurrencyBoughtId(),

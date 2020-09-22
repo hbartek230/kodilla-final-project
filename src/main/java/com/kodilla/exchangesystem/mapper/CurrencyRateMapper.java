@@ -17,6 +17,7 @@ public class CurrencyRateMapper {
 
     public CurrencyRate mapToCurrencyRate(CurrencyRateDto currencyRateDto) {
         return new CurrencyRate(
+                currencyRateDto.getId(),
                 currencyRateDto.getRatesBid(),
                 currencyRateDto.getRatesAsk()
         );
