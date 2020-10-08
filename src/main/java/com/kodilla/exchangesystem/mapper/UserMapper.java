@@ -25,12 +25,7 @@ public class UserMapper {
         return new User(
                 userDto.getId(),
                 userDto.getLogin(),
-                userDto.getPassword(),
-                userDto.getTransactionsId().stream()
-                        .map(transaction -> repository.findById(transaction))
-                        .filter(Optional::isPresent)
-                        .map(Optional::get)
-                        .collect(Collectors.toList())
+                userDto.getPassword()
         );
     }
 
@@ -38,11 +33,7 @@ public class UserMapper {
         return new UserDto(
                 user.getId(),
                 user.getLogin(),
-                user.getPassword(),
-                user.getTransactions().stream()
-                        .map(Transaction::getId)
-                        .collect(Collectors.toList())
-        );
+                user.getPassword());
     }
 
     public List<UserDto> mapToUserDtoList(List<User> users) {
@@ -51,11 +42,7 @@ public class UserMapper {
                         new UserDto(
                                 user.getId(),
                                 user.getLogin(),
-                                user.getPassword(),
-                                user.getTransactions().stream()
-                                        .map(Transaction::getId)
-                                        .collect(Collectors.toList())
-                        ))
+                                user.getPassword()))
                 .collect(Collectors.toList());
     }
 }

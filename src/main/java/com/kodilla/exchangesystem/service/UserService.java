@@ -4,6 +4,7 @@ import com.kodilla.exchangesystem.domain.User;
 import com.kodilla.exchangesystem.domain.dto.UserDto;
 import com.kodilla.exchangesystem.exception.UserNotFoundException;
 import com.kodilla.exchangesystem.repository.UserRepository;
+import com.kodilla.exchangesystem.useCases.CheckIfUserExist;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +14,12 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository repository;
+    private final CheckIfUserExist checkUserUseCase;
 
     @Autowired
-    public UserService(UserRepository repository) {
+    public UserService(UserRepository repository, CheckIfUserExist checkUserUseCase) {
         this.repository = repository;
+        this.checkUserUseCase = checkUserUseCase;
     }
 
     public List<User> getUsers() {
@@ -27,8 +30,8 @@ public class UserService {
         return repository.findById(userId).orElseThrow(UserNotFoundException::new);
     }
 
-    public void addUser(User user) {
-        repository.save(user);
+    public User addUser(User user) {
+        return checkUserUseCase.invoke(user);
     }
 
     public void deleteUser(Long userId) {

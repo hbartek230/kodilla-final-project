@@ -30,4 +30,10 @@ public class User {
             fetch = FetchType.LAZY
     )
     private List<Transaction> transactions;
+
+    public User(Long id, String login, String password) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+    }
 }
