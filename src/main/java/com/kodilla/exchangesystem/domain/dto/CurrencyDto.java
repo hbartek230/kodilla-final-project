@@ -10,6 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CurrencyDto {
+
     private Long id;
     private String currencyName;
     private String currencyCode;

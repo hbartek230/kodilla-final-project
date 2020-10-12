@@ -38,7 +38,7 @@ public class NBPClient {
         List<InnerCurrencyDto> currencies = new ArrayList<>();
 
         uris.forEach(uri -> {
-            try{
+            try {
                 InnerCurrencyDto currencyResponse = restTemplate.getForObject(uri, InnerCurrencyDto.class);
                 InnerCurrencyDto answer = Optional.ofNullable(currencyResponse).orElse(new InnerCurrencyDto());
                 currencies.add(answer);

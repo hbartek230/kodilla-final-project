@@ -9,18 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
 public class CurrencyMapper {
 
-    private final CurrencyRateRepository currencyRateRepository;
     private final CurrencyRateMapper currencyRateMapper;
 
     @Autowired
-    public CurrencyMapper(CurrencyRateRepository currencyRateRepository, CurrencyRateMapper currencyRateMapper) {
-        this.currencyRateRepository = currencyRateRepository;
+    public CurrencyMapper(CurrencyRateMapper currencyRateMapper) {
         this.currencyRateMapper = currencyRateMapper;
     }
 
@@ -37,8 +34,8 @@ public class CurrencyMapper {
                 currencyDto.getCurrencyName(),
                 currencyDto.getCurrencyCode(),
                 new CurrencyRate(
-                                currencyDto.getCurrencyRate().getRatesBid(),
-                                currencyDto.getCurrencyRate().getRatesAsk())
+                        currencyDto.getCurrencyRate().getRatesBid(),
+                        currencyDto.getCurrencyRate().getRatesAsk())
         );
     }
 

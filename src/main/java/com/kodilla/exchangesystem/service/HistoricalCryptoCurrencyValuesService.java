@@ -1,9 +1,7 @@
 package com.kodilla.exchangesystem.service;
 
 import com.kodilla.exchangesystem.domain.HistoricalCryptoCurrencyValues;
-import com.kodilla.exchangesystem.domain.HistoricalCurrencyValues;
 import com.kodilla.exchangesystem.domain.dto.HistoricalCryptoCurrencyValuesDto;
-import com.kodilla.exchangesystem.domain.dto.HistoricalCurrencyValuesDto;
 import com.kodilla.exchangesystem.mapper.HistoricalCryptoCurrencyValuesMapper;
 import com.kodilla.exchangesystem.repository.HistoricalCryptoCurrencyValuesRepository;
 import org.springframework.beans.factory.annotation.Autowired;

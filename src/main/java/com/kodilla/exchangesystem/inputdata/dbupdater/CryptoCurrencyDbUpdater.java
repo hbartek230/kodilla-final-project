@@ -3,7 +3,6 @@ package com.kodilla.exchangesystem.inputdata.dbupdater;
 import com.kodilla.exchangesystem.controller.CryptoCurrencyController;
 import com.kodilla.exchangesystem.domain.dto.CryptoCurrencyDto;
 import com.kodilla.exchangesystem.inputdata.client.CryptoClient;
-import com.kodilla.exchangesystem.inputdata.config.CryptoCurrencyConfig;
 import com.kodilla.exchangesystem.inputdata.domain.dto.InnerCryptoCurrencyDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;

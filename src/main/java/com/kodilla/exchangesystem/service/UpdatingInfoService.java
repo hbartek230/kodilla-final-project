@@ -23,7 +23,7 @@ public class UpdatingInfoService {
         return repository.findAll();
     }
 
-    public void addUpdatingInfo(UpdatingInfoDto info){
+    public void addUpdatingInfo(UpdatingInfoDto info) {
         repository.save(mapper.mapToUpdatingInfo(info));
     }
 

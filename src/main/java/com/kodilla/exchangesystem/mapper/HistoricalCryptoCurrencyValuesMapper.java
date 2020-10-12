@@ -1,9 +1,7 @@
 package com.kodilla.exchangesystem.mapper;
 
 import com.kodilla.exchangesystem.domain.HistoricalCryptoCurrencyValues;
-import com.kodilla.exchangesystem.domain.HistoricalCurrencyValues;
 import com.kodilla.exchangesystem.domain.dto.HistoricalCryptoCurrencyValuesDto;
-import com.kodilla.exchangesystem.domain.dto.HistoricalCurrencyValuesDto;
 import org.springframework.stereotype.Component;
 
 @Component

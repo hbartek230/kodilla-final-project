@@ -10,6 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CurrencyRateDto {
+
     private Long id;
     private double ratesBid;
     private double ratesAsk;

@@ -1,6 +1,5 @@
 package com.kodilla.exchangesystem.mapper;
 
-import com.kodilla.exchangesystem.domain.Transaction;
 import com.kodilla.exchangesystem.domain.User;
 import com.kodilla.exchangesystem.domain.dto.UserDto;
 import com.kodilla.exchangesystem.repository.TransactionRepository;
@@ -8,18 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
 public class UserMapper {
-
-    private TransactionRepository repository;
-
-    @Autowired
-    public UserMapper(TransactionRepository repository) {
-        this.repository = repository;
-    }
 
     public User mapToUser(UserDto userDto) {
         return new User(

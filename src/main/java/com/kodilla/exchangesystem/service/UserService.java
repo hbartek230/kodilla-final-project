@@ -1,7 +1,6 @@
 package com.kodilla.exchangesystem.service;
 
 import com.kodilla.exchangesystem.domain.User;
-import com.kodilla.exchangesystem.domain.dto.UserDto;
 import com.kodilla.exchangesystem.exception.UserNotFoundException;
 import com.kodilla.exchangesystem.repository.UserRepository;
 import com.kodilla.exchangesystem.useCases.CheckIfUserExist;

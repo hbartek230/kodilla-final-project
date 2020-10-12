@@ -2,11 +2,9 @@ package com.kodilla.exchangesystem.service;
 
 import com.kodilla.exchangesystem.domain.CryptoCurrency;
 import com.kodilla.exchangesystem.domain.HistoricalCryptoCurrencyValues;
-import com.kodilla.exchangesystem.domain.HistoricalCurrencyValues;
 import com.kodilla.exchangesystem.exception.CryptoCurrencyNotFoundException;
 import com.kodilla.exchangesystem.repository.CryptoCurrencyRepository;
 import com.kodilla.exchangesystem.repository.HistoricalCryptoCurrencyValuesRepository;
-import com.kodilla.exchangesystem.repository.HistoricalCurrencyValuesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
