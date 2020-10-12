@@ -77,10 +77,10 @@ public class CurrencyServiceTestSuite {
     }
 
     @Test
-    public void should_returnSpecifiedCurrencyCodeElementFromList() {
+    public void should_returnSpecifiedCurrencyCodeElementFromList() throws CurrencyNotFoundException {
         // given
         Currency currency = new Currency(2L, "Euro", "EUR", currencyRate);
-        when(repository.findByCurrencyCode(anyString())).thenReturn(currency);
+        when(repository.findByCurrencyCode(anyString())).thenReturn(Optional.of(currency));
 
         // when
         Currency testedCurrency = service.getCurrencyByCode(anyString());

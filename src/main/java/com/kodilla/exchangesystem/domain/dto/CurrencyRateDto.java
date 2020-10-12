@@ -13,4 +13,9 @@ public class CurrencyRateDto {
     private Long id;
     private double ratesBid;
     private double ratesAsk;
+
+    public CurrencyRateDto(double ratesBid, double ratesAsk) {
+        this.ratesBid = ratesBid;
+        this.ratesAsk = ratesAsk;
+    }
 }

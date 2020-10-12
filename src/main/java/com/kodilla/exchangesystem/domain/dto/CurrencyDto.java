@@ -13,5 +13,11 @@ public class CurrencyDto {
     private Long id;
     private String currencyName;
     private String currencyCode;
-    private Long currencyRateId;
+    private CurrencyRateDto currencyRate;
+
+    public CurrencyDto(String currencyName, String currencyCode, CurrencyRateDto currencyRate) {
+        this.currencyName = currencyName;
+        this.currencyCode = currencyCode;
+        this.currencyRate = currencyRate;
+    }
 }

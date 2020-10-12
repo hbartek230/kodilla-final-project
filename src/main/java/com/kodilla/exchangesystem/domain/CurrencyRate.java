@@ -23,4 +23,9 @@ public class CurrencyRate {
 
     @Column
     private double ratesAsk;
+
+    public CurrencyRate(double ratesBid, double ratesAsk) {
+        this.ratesBid = ratesBid;
+        this.ratesAsk = ratesAsk;
+    }
 }

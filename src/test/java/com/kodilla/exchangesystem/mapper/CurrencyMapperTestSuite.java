@@ -3,6 +3,7 @@ package com.kodilla.exchangesystem.mapper;
 import com.kodilla.exchangesystem.domain.Currency;
 import com.kodilla.exchangesystem.domain.CurrencyRate;
 import com.kodilla.exchangesystem.domain.dto.CurrencyDto;
+import com.kodilla.exchangesystem.domain.dto.CurrencyRateDto;
 import com.kodilla.exchangesystem.exception.CurrencyRateNotFoundException;
 import com.kodilla.exchangesystem.repository.CurrencyRateRepository;
 import org.junit.Test;
@@ -34,6 +35,9 @@ public class CurrencyMapperTestSuite {
     @Mock
     private CurrencyRate currencyRate;
 
+    @Mock
+    private CurrencyRateDto currencyRateDto;
+
     @Test
     public void should_mapToCurrencyDto() {
         // given
@@ -51,7 +55,7 @@ public class CurrencyMapperTestSuite {
     @Test
     public void should_mapToCurrency() throws CurrencyRateNotFoundException {
         // given
-        CurrencyDto currencyDto = new CurrencyDto(1L, "Dolar", "USD", 1L);
+        CurrencyDto currencyDto = new CurrencyDto(1L, "Dolar", "USD", currencyRateDto);
         when(currencyRateRepository.findById(Mockito.anyLong()))
                 .thenReturn(Optional.of(currencyRate));
 

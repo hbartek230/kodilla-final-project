@@ -5,6 +5,7 @@ import com.kodilla.exchangesystem.exception.CurrencyNotFoundException;
 import com.kodilla.exchangesystem.exception.CurrencyRateNotFoundException;
 import com.kodilla.exchangesystem.mapper.CurrencyMapper;
 import com.kodilla.exchangesystem.repository.CurrencyRepository;
+import com.kodilla.exchangesystem.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,42 +19,42 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequestMapping("/currency")
 public class CurrencyController {
 
-    private final CurrencyRepository repository;
+    private final CurrencyService service;
     private final CurrencyMapper mapper;
 
     @Autowired
-    public CurrencyController(CurrencyRepository repository, CurrencyMapper mapper) {
-        this.repository = repository;
+    public CurrencyController(CurrencyService service, CurrencyMapper mapper) {
+        this.service = service;
         this.mapper = mapper;
     }
 
     @GetMapping
     public List<CurrencyDto> getCurrencies() {
-        return mapper.mapToCurrencyDtoList(repository.findAll());
+        return mapper.mapToCurrencyDtoList(service.getCurrencies());
     }
 
     @GetMapping(params = "currencyId")
     public CurrencyDto getCurrency(@RequestParam Long currencyId) throws CurrencyNotFoundException {
-        return mapper.mapToCurrencyDto(repository.findById(currencyId).orElseThrow(CurrencyNotFoundException::new));
+        return mapper.mapToCurrencyDto(service.getSingleCurrency(currencyId));
     }
 
     @GetMapping(params = "currencyCode")
-    public CurrencyDto getCurrencyByCode(@RequestParam String currencyCode) {
-        return mapper.mapToCurrencyDto(repository.findByCurrencyCode(currencyCode));
+    public CurrencyDto getCurrencyByCode(@RequestParam String currencyCode) throws CurrencyNotFoundException {
+        return mapper.mapToCurrencyDto(service.getCurrencyByCode(currencyCode));
     }
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
     public CurrencyDto addCurrency(@RequestBody CurrencyDto currencyDto) throws CurrencyRateNotFoundException {
-        return mapper.mapToCurrencyDto(repository.save(mapper.mapToCurrency(currencyDto)));
+        return mapper.mapToCurrencyDto(service.addCurrency(mapper.mapToCurrency(currencyDto)));
     }
 
     @PutMapping
     public CurrencyDto updateCurrency(@RequestBody CurrencyDto currencyDto) throws CurrencyRateNotFoundException {
-        return mapper.mapToCurrencyDto(repository.save(mapper.mapToCurrency(currencyDto)));
+        return mapper.mapToCurrencyDto(service.addCurrency(mapper.mapToCurrency(currencyDto)));
     }
 
     @DeleteMapping
     public void deleteCurrency(@RequestParam Long currencyId) {
-        repository.deleteById(currencyId);
+        service.deleteCurrency(currencyId);
     }
 }
