@@ -7,11 +7,13 @@ import com.kodilla.exchangesystem.exception.CurrencyRateNotFoundException;
 import com.kodilla.exchangesystem.inputdata.client.NBPClient;
 import com.kodilla.exchangesystem.inputdata.domain.dto.InnerCurrencyDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
+@EnableAspectJAutoProxy
 public class CurrencyDbUpdater {
 
     private final NBPClient nbpClient;

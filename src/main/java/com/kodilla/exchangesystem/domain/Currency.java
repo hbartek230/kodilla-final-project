@@ -26,4 +26,10 @@ public class Currency {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "currencyRateId")
     private CurrencyRate currencyRate;
+
+    public Currency(String currencyName, String currencyCode, CurrencyRate currencyRate) {
+        this.currencyName = currencyName;
+        this.currencyCode = currencyCode;
+        this.currencyRate = currencyRate;
+    }
 }
