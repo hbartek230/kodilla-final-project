@@ -13,9 +13,9 @@ public class CryptoCurrencyDto {
 
     private Long id;
     private String currencyName;
-    private Long currencyValue;
+    private double currencyValue;
 
-    public CryptoCurrencyDto(String currencyName, long currencyValue) {
+    public CryptoCurrencyDto(String currencyName, double currencyValue) {
         this.currencyName = currencyName;
         this.currencyValue = currencyValue;
     }

@@ -25,5 +25,10 @@ public class CryptoCurrency {
     private String currencyName;
 
     @Column
-    private Long currencyValue;
+    private double currencyValue;
+
+    public CryptoCurrency(String currencyName, double currencyValue) {
+        this.currencyName = currencyName;
+        this.currencyValue = currencyValue;
+    }
 }

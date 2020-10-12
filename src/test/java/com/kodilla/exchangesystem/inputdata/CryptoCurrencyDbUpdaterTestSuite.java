@@ -1,6 +1,6 @@
 package com.kodilla.exchangesystem.inputdata;
 
-import com.kodilla.exchangesystem.inputdata.dbupdater.CurrencyDbUpdater;
+import com.kodilla.exchangesystem.inputdata.dbupdater.CryptoCurrencyDbUpdater;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +9,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CurrencyDbUpdaterTestSuite {
+public class CryptoCurrencyDbUpdaterTestSuite {
 
     @Autowired
-    private CurrencyDbUpdater updater;
+    private CryptoCurrencyDbUpdater updater;
 
     @Test
-    public void testDbUpdater() {
-        updater.addCurrencyFromNBPToDatabase();
+    public void cryptoCurrencyUpdaterTest() {
+        updater.addCryptoCurrencyToDatabase();
     }
 }

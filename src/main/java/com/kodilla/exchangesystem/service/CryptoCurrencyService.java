@@ -26,8 +26,12 @@ public class CryptoCurrencyService {
         return repository.findById(cryptoCurrencyId).orElseThrow(CryptoCurrencyNotFoundException::new);
     }
 
-    public void addCryptoCurrency(CryptoCurrency cryptoCurrency) {
-        repository.save(cryptoCurrency);
+    public CryptoCurrency addCryptoCurrency(CryptoCurrency cryptoCurrency) {
+        if (repository.findByCurrencyName(cryptoCurrency.getCurrencyName()).isPresent()) {
+            return repository.save(repository.findByCurrencyName(cryptoCurrency.getCurrencyName()).get());
+        } else {
+            return repository.save(cryptoCurrency);
+        }
     }
 
     public void deleteCryptoCurrency(Long cryptoCurrencyId) {

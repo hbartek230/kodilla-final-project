@@ -24,6 +24,6 @@ public class CryptoCurrencyDbUpdater {
         InnerCryptoCurrencyDto cryptoCurrency = cryptoClient.getBitcoinValueData();
         controller.addCryptoCurrency(new CryptoCurrencyDto(
                 "Bitcoin",
-                Long.parseLong(cryptoCurrency.getBitcoinValue())));
+                Double.parseDouble(cryptoCurrency.getBitcoinValue())));
     }
 }

@@ -12,7 +12,6 @@ public class CryptoCurrencyMapper {
 
     public CryptoCurrencyDto mapToCryptoCurrencyDto(CryptoCurrency cryptoCurrency) {
         return new CryptoCurrencyDto(
-                cryptoCurrency.getId(),
                 cryptoCurrency.getCurrencyName(),
                 cryptoCurrency.getCurrencyValue()
         );
@@ -20,7 +19,6 @@ public class CryptoCurrencyMapper {
 
     public CryptoCurrency mapToCryptoCurrency(CryptoCurrencyDto cryptoCurrencyDto) {
         return new CryptoCurrency(
-                cryptoCurrencyDto.getId(),
                 cryptoCurrencyDto.getCurrencyName(),
                 cryptoCurrencyDto.getCurrencyValue()
         );
@@ -30,7 +28,6 @@ public class CryptoCurrencyMapper {
         return cryptoCurrencies.stream()
                 .map(cryptoCurrency ->
                         new CryptoCurrencyDto(
-                                cryptoCurrency.getId(),
                                 cryptoCurrency.getCurrencyName(),
                                 cryptoCurrency.getCurrencyValue()
                         ))
