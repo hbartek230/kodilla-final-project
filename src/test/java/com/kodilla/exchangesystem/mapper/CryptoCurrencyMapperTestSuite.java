@@ -31,7 +31,7 @@ public class CryptoCurrencyMapperTestSuite {
         // then
         assertEquals(cryptoCurrencyDto.getId(), cryptoCurrency.getId());
         assertEquals(cryptoCurrencyDto.getCurrencyName(), cryptoCurrency.getCurrencyName());
-        assertEquals(cryptoCurrencyDto.getCurrencyValue(), cryptoCurrency.getCurrencyValue());
+        assertEquals(cryptoCurrencyDto.getCurrencyValue(), cryptoCurrency.getCurrencyValue(), 0.01);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class CryptoCurrencyMapperTestSuite {
         // then
         assertEquals(cryptoCurrency.getId(), cryptoCurrencyDto.getId());
         assertEquals(cryptoCurrency.getCurrencyName(), cryptoCurrencyDto.getCurrencyName());
-        assertEquals(cryptoCurrency.getCurrencyValue(), cryptoCurrencyDto.getCurrencyValue());
+        assertEquals(cryptoCurrency.getCurrencyValue(), cryptoCurrencyDto.getCurrencyValue(), 0.01);
     }
 
     @Test
@@ -61,7 +61,7 @@ public class CryptoCurrencyMapperTestSuite {
         cryptoCurrencyDtoList.forEach(cryptoCurrencyDto -> {
             assertEquals(cryptoCurrencyDto.getId(), cryptoCurrencyList.get(0).getId());
             assertEquals(cryptoCurrencyDto.getCurrencyName(), cryptoCurrencyList.get(0).getCurrencyName());
-            assertEquals(cryptoCurrencyDto.getCurrencyValue(), cryptoCurrencyList.get(0).getCurrencyValue());
+            assertEquals(cryptoCurrencyDto.getCurrencyValue(), cryptoCurrencyList.get(0).getCurrencyValue(), 0.01);
         });
     }
 }
