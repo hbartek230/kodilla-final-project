@@ -14,7 +14,6 @@ import java.time.LocalDate;
 @Aspect
 @Component
 public class Watcher {
-    private static final Logger LOGGER = LoggerFactory.getLogger(Watcher.class);
 
     private final UpdatingInfoService service;
 
