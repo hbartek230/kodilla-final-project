@@ -18,7 +18,7 @@ public class CheckIfUserExist {
     }
 
     public User invoke(User user) {
-        if(repository.findByLogin(user.getLogin()).isPresent()) {
+        if(!repository.findByLogin(user.getLogin()).isPresent()) {
             return repository.save(user);
         } else {
             LOGGER.error("User not Found");

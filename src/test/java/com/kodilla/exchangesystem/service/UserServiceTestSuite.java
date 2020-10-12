@@ -11,7 +11,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 
@@ -23,7 +22,7 @@ public class UserServiceTestSuite {
     private UserService service;
 
     @Autowired
-    UserRepository repository;
+    private UserRepository repository;
 
     @Test
     public void should_returnEmptyUserList() {
@@ -72,6 +71,23 @@ public class UserServiceTestSuite {
         assertEquals(testedUser.getPassword(), user.getPassword());
 
         // cleanUp
+        repository.deleteAll();
+    }
+
+    @Test
+    public void should_removeSpecifiedIdElementFromList() throws UserNotFoundException {
+        User user = new User(1L, "test_user", "test_password");
+        List<User> expectedList = Collections.emptyList();
+        service.addUser(user);
+
+        // when
+        service.deleteUser(repository.findByLogin(user.getLogin()).orElseThrow(UserNotFoundException::new).getId());
+        List<User> testedList = service.getUsers();
+
+        // then
+        assertEquals(expectedList.size(), testedList.size());
+
+        //cleanUp
         repository.deleteAll();
     }
 }
