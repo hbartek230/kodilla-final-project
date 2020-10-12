@@ -4,12 +4,10 @@ import com.kodilla.exchangesystem.domain.dto.CurrencyDto;
 import com.kodilla.exchangesystem.exception.CurrencyNotFoundException;
 import com.kodilla.exchangesystem.exception.CurrencyRateNotFoundException;
 import com.kodilla.exchangesystem.mapper.CurrencyMapper;
-import com.kodilla.exchangesystem.repository.CurrencyRepository;
 import com.kodilla.exchangesystem.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;

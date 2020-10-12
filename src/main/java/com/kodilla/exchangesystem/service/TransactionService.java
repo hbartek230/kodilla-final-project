@@ -45,8 +45,8 @@ public class TransactionService {
         return repository.findByIdAndUserId(transactionId, userId);
     }
 
-    public void addTransaction(Transaction transaction) {
-        repository.save(transaction);
+    public Transaction addTransaction(Transaction transaction) {
+        return repository.save(transaction);
     }
 
     public void deleteTransaction(Long transactionId) {

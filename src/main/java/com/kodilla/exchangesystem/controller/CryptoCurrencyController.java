@@ -3,7 +3,6 @@ package com.kodilla.exchangesystem.controller;
 import com.kodilla.exchangesystem.domain.dto.CryptoCurrencyDto;
 import com.kodilla.exchangesystem.exception.CryptoCurrencyNotFoundException;
 import com.kodilla.exchangesystem.mapper.CryptoCurrencyMapper;
-import com.kodilla.exchangesystem.repository.CryptoCurrencyRepository;
 import com.kodilla.exchangesystem.service.CryptoCurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
