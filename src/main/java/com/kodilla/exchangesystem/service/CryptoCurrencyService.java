@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class CryptoCurrencyService {
 
-    private CryptoCurrencyRepository repository;
+    private final CryptoCurrencyRepository repository;
 
     @Autowired
     public CryptoCurrencyService(CryptoCurrencyRepository repository) {
