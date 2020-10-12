@@ -13,20 +13,17 @@ import java.util.List;
 public class HistoricalCryptoCurrencyValuesService {
 
     private final HistoricalCryptoCurrencyValuesRepository repository;
-    private final HistoricalCryptoCurrencyValuesMapper mapper;
 
     @Autowired
-    public HistoricalCryptoCurrencyValuesService(HistoricalCryptoCurrencyValuesRepository repository,
-                                                 HistoricalCryptoCurrencyValuesMapper mapper) {
+    public HistoricalCryptoCurrencyValuesService(HistoricalCryptoCurrencyValuesRepository repository) {
         this.repository = repository;
-        this.mapper = mapper;
     }
 
     public List<HistoricalCryptoCurrencyValues> getHistoricalCryptoCurrencyValues() {
         return repository.findAll();
     }
 
-    public HistoricalCryptoCurrencyValues addHistoricalCurrencyValue(HistoricalCryptoCurrencyValuesDto currency) {
-        return repository.save(mapper.mapToHistoricalCryptoCurrencyValues(currency));
+    public HistoricalCryptoCurrencyValues addHistoricalCurrencyValue(HistoricalCryptoCurrencyValues currency) {
+        return repository.save(currency);
     }
 }

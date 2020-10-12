@@ -56,7 +56,7 @@ public class CryptoCurrencyServiceTestSuite {
         assertEquals(testedList.size(), expectedList.size());
         assertEquals(testedList.get(0).getId(), expectedList.get(0).getId());
         assertEquals(testedList.get(0).getCurrencyName(), expectedList.get(0).getCurrencyName());
-        assertEquals(testedList.get(0).getCurrencyValue(), expectedList.get(0).getCurrencyValue());
+        assertEquals(testedList.get(0).getCurrencyValue(), expectedList.get(0).getCurrencyValue(), 0.01);
     }
 
     @Test
@@ -71,7 +71,7 @@ public class CryptoCurrencyServiceTestSuite {
         // then
         assertEquals(cryptoCurrency.getId(), testedCurrency.getId());
         assertEquals(cryptoCurrency.getCurrencyName(), testedCurrency.getCurrencyName());
-        assertEquals(cryptoCurrency.getCurrencyValue(), testedCurrency.getCurrencyValue());
+        assertEquals(cryptoCurrency.getCurrencyValue(), testedCurrency.getCurrencyValue(), 0.01);
     }
 
     @Test

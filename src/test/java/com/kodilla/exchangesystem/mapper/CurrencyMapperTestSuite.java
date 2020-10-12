@@ -47,7 +47,6 @@ public class CurrencyMapperTestSuite {
         CurrencyDto currencyDto = mapper.mapToCurrencyDto(currency);
 
         // then
-        assertEquals(currencyDto.getId(), currency.getId());
         assertEquals(currencyDto.getCurrencyName(), currency.getCurrencyName());
         assertEquals(currencyDto.getCurrencyCode(), currency.getCurrencyCode());
     }
@@ -63,7 +62,6 @@ public class CurrencyMapperTestSuite {
         Currency currency = mapper.mapToCurrency(currencyDto);
 
         // then
-        assertEquals(currency.getId(), currencyDto.getId());
         assertEquals(currency.getCurrencyName(), currencyDto.getCurrencyName());
         assertEquals(currency.getCurrencyCode(), currencyDto.getCurrencyCode());
     }
@@ -79,7 +77,6 @@ public class CurrencyMapperTestSuite {
 
         // then
         currencyDtoList.forEach(currencyDto -> {
-            assertEquals(currencyDto.getId(), currencyList.get(0).getId());
             assertEquals(currencyDto.getCurrencyName(), currencyList.get(0).getCurrencyName());
             assertEquals(currencyDto.getCurrencyCode(), currencyList.get(0).getCurrencyCode());
         });

@@ -12,19 +12,17 @@ import java.util.List;
 public class UpdatingInfoService {
 
     private final UpdatingInfoRepository repository;
-    private final UpdatingInfoMapper mapper;
 
-    public UpdatingInfoService(UpdatingInfoRepository repository, UpdatingInfoMapper mapper) {
+    public UpdatingInfoService(UpdatingInfoRepository repository) {
         this.repository = repository;
-        this.mapper = mapper;
     }
 
     public List<UpdatingInfo> getUpdatingInfos() {
         return repository.findAll();
     }
 
-    public void addUpdatingInfo(UpdatingInfoDto info) {
-        repository.save(mapper.mapToUpdatingInfo(info));
+    public UpdatingInfo addUpdatingInfo(UpdatingInfo info) {
+        return repository.save(info);
     }
 
 }

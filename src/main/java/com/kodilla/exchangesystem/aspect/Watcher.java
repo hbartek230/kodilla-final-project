@@ -1,6 +1,6 @@
 package com.kodilla.exchangesystem.aspect;
 
-import com.kodilla.exchangesystem.domain.dto.UpdatingInfoDto;
+import com.kodilla.exchangesystem.domain.UpdatingInfo;
 import com.kodilla.exchangesystem.service.UpdatingInfoService;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -25,13 +25,13 @@ public class Watcher {
 
     @After("execution(* com.kodilla.exchangesystem.inputdata.dbupdater.CurrencyDbUpdater.addCurrencyFromNBPToDatabase(..))")
     public void logCurrencyValueInDatabaseUpdate() {
-        UpdatingInfoDto info = new UpdatingInfoDto(LocalDate.now(), "Updating Currency Database");
+        UpdatingInfo info = new UpdatingInfo(LocalDate.now(), "Updating Currency Database");
         service.addUpdatingInfo(info);
     }
 
     @After("execution(* com.kodilla.exchangesystem.inputdata.dbupdater.CryptoCurrencyDbUpdater.addCryptoCurrencyToDatabase(..))")
     public void logCryptoCurrencyValueInDatabaseUpdate() {
-        UpdatingInfoDto info = new UpdatingInfoDto(LocalDate.now(), "Updating CryptoCurrency Database");
+        UpdatingInfo info = new UpdatingInfo(LocalDate.now(), "Updating CryptoCurrency Database");
         service.addUpdatingInfo(info);
     }
 }
