@@ -3,7 +3,6 @@ package com.kodilla.exchangesystem.service;
 import com.kodilla.exchangesystem.domain.Currency;
 import com.kodilla.exchangesystem.exception.CurrencyNotFoundException;
 import com.kodilla.exchangesystem.repository.CurrencyRepository;
-import com.kodilla.exchangesystem.useCases.SaveCurrencyToDatabaseUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +31,7 @@ public class CurrencyService {
     }
 
     public Currency addCurrency(Currency currency) {
-        if(repository.findByCurrencyCode(currency.getCurrencyCode()).isPresent()) {
+        if (repository.findByCurrencyCode(currency.getCurrencyCode()).isPresent()) {
             return repository.save(repository.findByCurrencyCode(currency.getCurrencyCode()).get());
         } else {
             return repository.save(currency);

@@ -22,15 +22,15 @@ public class NBPClient {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(NBPClient.class);
 
-    private NBPConfig config;
-    private RestTemplate restTemplate;
-    private List<String> currenciesCodeList;
+    private final NBPConfig config;
+    private final RestTemplate restTemplate;
+    private final List<String> currenciesCodeList;
 
     @Autowired
     public NBPClient(NBPConfig config, RestTemplate restTemplate) {
         this.config = config;
         this.restTemplate = restTemplate;
-        currenciesCodeList = Arrays.asList("usd", "eur", "chf", "gbp");
+        this.currenciesCodeList = Arrays.asList("usd", "eur", "chf", "gbp");
     }
 
     public List<InnerCurrencyDto> getCurrenciesFromNBP() {
