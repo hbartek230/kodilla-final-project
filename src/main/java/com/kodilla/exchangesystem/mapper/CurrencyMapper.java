@@ -23,14 +23,16 @@ public class CurrencyMapper {
 
     public CurrencyDto mapToCurrencyDto(Currency currency) {
         return new CurrencyDto(
-                currency.getCurrencyName(),
+                currency.getId(),
                 currency.getCurrencyCode(),
+                currency.getCurrencyName(),
                 currencyRateMapper.mapToCurrencyRateDto(currency.getCurrencyRate())
         );
     }
 
     public Currency mapToCurrency(CurrencyDto currencyDto) throws CurrencyRateNotFoundException {
         return new Currency(
+                currencyDto.getId(),
                 currencyDto.getCurrencyName(),
                 currencyDto.getCurrencyCode(),
                 new CurrencyRate(
@@ -43,8 +45,9 @@ public class CurrencyMapper {
         return currenciesList.stream()
                 .map(currency ->
                         new CurrencyDto(
-                                currency.getCurrencyName(),
+                                currency.getId(),
                                 currency.getCurrencyCode(),
+                                currency.getCurrencyName(),
                                 currencyRateMapper.mapToCurrencyRateDto(currency.getCurrencyRate())
                         ))
                 .collect(Collectors.toList());
